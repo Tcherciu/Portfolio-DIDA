@@ -8,7 +8,7 @@
   <script src= "https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
-    /* ---------- base ---------- */
+    
     body {
       margin: 0;
       background: #FAFAF7;
@@ -29,7 +29,6 @@
       margin: 0;
     }
 
-    /* ---------- header ---------- */
     h1 {
       font-size: 38px;
       letter-spacing: -0.5px;
@@ -47,7 +46,7 @@
       margin: 24px 0 40px;
     }
 
-    /* ---------- sections ---------- */
+    /*sections*/
     h2 {
       font-size: 22px;
       margin-bottom: 16px;
@@ -57,7 +56,7 @@
       margin-bottom: 48px;
     }
 
-    /* ---------- photos ---------- */
+    /*photos*/
     .photos {
       display: flex;
       flex-wrap: wrap;
@@ -83,7 +82,7 @@
       margin-top: 8px;
     }
 
-    /* ---------- charts ---------- */
+    /*charts*/
     .card {
       background: #FFFFFF;
       border: 1px solid #E5E3DD;
@@ -110,48 +109,43 @@
 <body>
 <div class="page">
 
-  <!-- ===== header ===== -->
   <header>
-    <h1>Traian Cherciu</h1>
-    <p class="subtitle">Data Journalism · Binghamton University</p>
+    <h1>A Season To Remember</h1>
+    <p class="subtitle">Traian Cherciu - Binghamton University</p>
     <div class="rule"></div>
   </header>
 
-  <!-- ===== photos ===== -->
   <section>
-    <h2>Photos</h2>
+    <h2>2026 Season Photos</h2>
     <div class="photos">
       <div class="photo">
         <img src= https://images.unsplash.com/photo-1714840961998-8d6c02ace00b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D 
           alt="A tennis player serving on a hard court">
-        <p class="caption">Serving practice on the hard courts.</p>
       </div>
       <div class="photo">
         <img src= https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D 
           alt="Tennis balls and a racquet beside the baseline">
-        <p class="caption">Equipment at the baseline before a match.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== charts ===== -->
   <section>
-    <h2>Charts</h2>
+    <h2>Seasons Data</h2>
 
     <div class="card">
-      <h3>Average First-Serve Speed, 2026 Season</h3>
-      <p class="note">Measured in miles per hour. Sample data.</p>
+      <h3>Average First-Serve Speed in 2026 </h3>
+      <p class="note">Using a speedgun in MPH </p>
       <canvas id="serveChart"></canvas>
     </div>
 
     <div class="card">
-      <h3>Match Wins by Court Surface</h3>
-      <p class="note">Matches won across the 2026 season. Sample data.</p>
+      <h3>Match wins by Court Surface</h3>
+      <p class="note">Matches won in 2026</p>
       <canvas id="surfaceChart"></canvas>
     </div>
   </section>
 
-  <!-- ===== design note ===== -->
   <section>
     <h2>Design Choices</h2>
     <p>I built this page around a single accent green pulled from a tennis
@@ -170,13 +164,10 @@
 
 </div>
 
-<!-- ===== scripts ===== -->
 <script>
-  // shared look for both charts
   const accent = "#2F6B3F";
   const animation = { duration: 1200, easing: "easeOutQuart" };
 
-  // chart 1 — line
   new Chart(document.getElementById("serveChart"), {
     type: "line",
     data: {
@@ -204,7 +195,7 @@
     }
   });
 
-  // chart 2 — bar
+  // chart 2
   new Chart(document.getElementById("surfaceChart"), {
     type: "bar",
     data: {
