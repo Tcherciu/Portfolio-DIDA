@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traian Cherciu — Tennis Portfolio</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ---------- base ---------- */
+    body {
+      margin: 0;
+      background: #FAFAF7;
+      color: #1F2421;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    /* ---------- header ---------- */
+    h1 {
+      font-size: 38px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: #6B7280;
+      margin: 6px 0 0;
+    }
+
+    .rule {
+      height: 3px;
+      background: #2F6B3F;
+      width: 64px;
+      margin: 24px 0 40px;
+    }
+
+    /* ---------- sections ---------- */
+    h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    /* ---------- photos ---------- */
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .photo {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .caption {
+      color: #6B7280;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    /* ---------- charts ---------- */
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E5E3DD;
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 18px;
+      margin: 0 0 4px;
+    }
+
+    .note {
+      color: #6B7280;
+      font-size: 14px;
+      margin: 0 0 16px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- ===== header ===== -->
+  <header>
+    <h1>Traian Cherciu</h1>
+    <p class="subtitle">Data Journalism · Binghamton University</p>
+    <div class="rule"></div>
+  </header>
+
+  <!-- ===== photos ===== -->
+  <section>
+    <h2>Photos</h2>
+    <div class="photos">
+      <div class="photo">
+        <img src="tennis-1.jpg" alt="A tennis player serving on a hard court">
+        <p class="caption">Serving practice on the hard courts.</p>
+      </div>
+      <div class="photo">
+        <img src="tennis-2.jpg" alt="Tennis balls and a racquet beside the baseline">
+        <p class="caption">Equipment at the baseline before a match.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== charts ===== -->
+  <section>
+    <h2>Charts</h2>
+
+    <div class="card">
+      <h3>Average First-Serve Speed, 2026 Season</h3>
+      <p class="note">Measured in miles per hour. Sample data.</p>
+      <canvas id="serveChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Match Wins by Court Surface</h3>
+      <p class="note">Matches won across the 2026 season. Sample data.</p>
+      <canvas id="surfaceChart"></canvas>
+    </div>
+  </section>
+
+  <!-- ===== design note ===== -->
+  <section>
+    <h2>Design Choices</h2>
+    <p>I built this page around a single accent green pulled from a tennis
+    court, and reused it for the rule under my name, the chart line, and the
+    bars, so every element reads as part of one system instead of competing
+    for attention. The layout is a single centered column with a fixed maximum
+    width, which keeps the text at a comfortable reading length and lets the
+    photos and charts fall into predictable pairs. I paired a serif for
+    headings with a sans-serif for body text to build hierarchy without adding
+    more colors or weights. In both charts I removed the gridlines and legend
+    wherever a single data series made them redundant, so the data is the
+    loudest thing on the page. I also kept all the JavaScript in one block at
+    the bottom of the file and grouped the CSS by section, so the code is as
+    easy to scan as the page.</p>
+  </section>
+
+</div>
+
+<!-- ===== scripts ===== -->
+<script>
+  // shared look for both charts
+  const accent = "#2F6B3F";
+  const animation = { duration: 1200, easing: "easeOutQuart" };
+
+  // chart 1 — line
+  new Chart(document.getElementById("serveChart"), {
+    type: "line",
+    data: {
+      labels: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+      datasets: [{
+        label: "First-serve speed (mph)",
+        data: [98, 101, 100, 104, 107, 106, 110, 112],
+        borderColor: accent,
+        backgroundColor: accent,
+        borderWidth: 3,
+        tension: 0.35,
+        pointRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: animation,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: false,
+          title: { display: true, text: "mph" }
+        }
+      }
+    }
+  });
+
+  // chart 2 — bar
+  new Chart(document.getElementById("surfaceChart"), {
+    type: "bar",
+    data: {
+      labels: ["Hard", "Clay", "Grass", "Indoor"],
+      datasets: [{
+        label: "Matches won",
+        data: [14, 9, 4, 11],
+        backgroundColor: accent,
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: animation,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: "Matches won" }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
