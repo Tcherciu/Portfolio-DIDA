@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Journalism Attendance, Fall 2026</title>
+  <style>
+    .chart-block {
+      display: block;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .chart-block p {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-block">
+    <h1>Data Journalism Attendance, Fall 2026</h1>
+
+    <p>This chart shows how attendance in Data Journalism varied during the
+    fall 2026 semester at Binghamton University. The course meets Mondays and
+    Wednesdays from 8:00 to 9:30 a.m. It began on August 18, but that first
+    session is not included here. Attendance is recorded within the first ten
+    minutes of class, so students who arrive after that are counted absent.
+    All 19 enrolled students have never been present at the same session.
+    Attendance in October ran lower than in September, and Wednesdays appear
+    to run lower than Mondays.</p>
+
+    <div style="min-height:430px" id="datawrapper-vis-avreH">
+      <script type="text/javascript" defer
+              src="https://datawrapper.dwcdn.net/avreH/embed.js"
+              data-target="#datawrapper-vis-avreH"></script>
+      <noscript>
+        <img src="https://datawrapper.dwcdn.net/avreH/full.png"
+             alt="Line chart of Data Journalism attendance, fall 2026">
+      </noscript>
+    </div>
+  </div>
+</body>
+</html>
