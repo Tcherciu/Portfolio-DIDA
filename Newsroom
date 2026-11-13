@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The First Serve Advantage</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ---------- base ---------- */
+    body {
+      margin: 0;
+      background: #FAFAF8;
+      color: #1A1A18;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+
+    /* ---------- header ---------- */
+    .kicker {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #14507D;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: 44px;
+      line-height: 1.12;
+      font-weight: normal;
+      margin: 0 0 18px;
+    }
+
+    .standfirst {
+      font-size: 21px;
+      line-height: 1.5;
+      color: #4A4A45;
+      margin: 0 0 26px;
+    }
+
+    .byline {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      color: #6B6B64;
+      border-top: 3px solid #14507D;
+      border-bottom: 1px solid #DCD9D1;
+      padding: 12px 0;
+      margin-bottom: 44px;
+    }
+
+    /* ---------- body text ---------- */
+    p { margin: 0 0 22px; }
+
+    h2 {
+      font-size: 27px;
+      font-weight: normal;
+      line-height: 1.25;
+      margin: 46px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #DCD9D1;
+    }
+
+    a {
+      color: #14507D;
+      text-decoration: underline;
+    }
+
+    a:hover { color: #0D3755; }
+
+    /* ---------- charts ---------- */
+    figure {
+      margin: 38px 0;
+      padding: 24px;
+      background: #FFFFFF;
+      border: 1px solid #E3E0D8;
+      border-left: 4px solid #14507D;
+    }
+
+    figure h3 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.35;
+      margin: 0 0 4px;
+    }
+
+    .subhead {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      color: #6B6B64;
+      margin: 0 0 20px;
+    }
+
+    figcaption {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6B6B64;
+      margin-top: 16px;
+      border-top: 1px solid #EDEBE4;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <p class="kicker">Tennis Analytics</p>
+    <h1>The First Serve Advantage</h1>
+    <p class="standfirst">How one shot shapes victory in professional tennis
+    &mdash; and why landing it is only half the battle.</p>
+    <p class="byline">By Andre Ajed and Traian Cherciu</p>
+  </header>
+
+  <!-- ============ INTRO ============ -->
+  <p>In professional tennis, matches can be decided by just a few points which
+  is a very small margin. A missed first serve, a double fault, or an ace at
+  the right moment can entirely change the momentum of a match. At the highest
+  level of men's professional tennis, where players normally hit serves that go
+  over 120 miles per hour, the first serve is one of the most important weapons
+  a player has.</p>
+
+  <p>However, does making more first serves actually increase a player's chances
+  of winning? Or is winning the points after those serves more important?
+  Statistics from the Association of Tennis Professionals (ATP) suggest that
+  there is a meaningful difference between simply getting a first serve in and
+  making that serve effective. Players such as Alexander Zverev, Jannik Sinner,
+  and Hubert Hurkacz demonstrate how different serving styles or techniques can
+  create successful results. As professional tennis becomes increasingly driven
+  by statistics and technology, the numbers behind the first serve offer a
+  better understanding of what separates winning performances from losing
+  ones.</p>
+
+  <!-- ============ SECTION 1 ============ -->
+  <h2>Getting the Serve In vs. Winning the Point</h2>
+
+  <p>To really understand how important the first serve is, two statistics must
+  be distinguished which are first-serve percentage and first-serve points won.
+  First-serve percentage measures how often a player's first serve lands inside
+  the appropriate service box. First-serve points won measures how often a
+  player wins the point after successfully landing that first serve. Although
+  the two statistics sound relatively the same, they actually tell different
+  sides of the story.</p>
+
+  <p>A player might land 65% of their first serves but win only 55% of those
+  points. Another player might land just 50% of first serves but win 70% of
+  those points. The first player is more consistent at getting the serve in,
+  while the second is more successful at turning those serves into points. This
+  distinction is specifically essential in professional tennis, where a strong
+  and well-placed first serve can put the opponent under instant pressure.
+  Winning points rapidly also reduces the number of opportunities an opponent
+  has to take control of a rally.</p>
+
+  <p>According to the <a href="https://www.atptour.com/en/stats/leaderboard?boardType=serve&amp;formerNo1=false&amp;surface=all&amp;timeFrame=2024&amp;versusRank=all">ATP's
+  official serving statistics</a>, the best players do not necessarily lead
+  every serving category. If we take a look at Novak Djokovic for example, there
+  are so many players that serve better than him but can't produce the same
+  overall level that he can. Some rely on accuracy and consistency while others
+  depend more heavily on the effectiveness of their first serve.</p>
+
+  <!-- ============ SECTION 2 + VISUAL 1 ============ -->
+  <h2>What the ATP Numbers Reveal</h2>
+
+  <p>The 2024 ATP season provides an interesting comparison between three of the
+  tour's most powerful servers. Alexander Zverev landed 71.3% of his first
+  serves and won 76.7% of the points played behind them. Jannik Sinner,
+  meanwhile, landed only 61.4% of his first serves but won 79.4% of those
+  points. Hubert Hurkacz fell between the two in first-serve accuracy, landing
+  63.2% of his first serves and winning 77.7% of the points behind them.</p>
+
+  <p>These statistics reveal something notable about serving effectiveness.
+  Zverev landed nearly 10 percentage points more first serves than Sinner, but
+  Sinner was more successful at winning points once his first serve landed.
+  However, the comparison becomes more interesting when looking at service games
+  won.</p>
+
+  <figure>
+    <h3>Sinner lands the fewest first serves &mdash; and wins the most service games</h3>
+    <p class="subhead">2024 ATP season, three of the tour's leading servers</p>
+    <canvas id="chart1"></canvas>
+    <figcaption>Source: <a href="https://www.atptour.com/en/stats/leaderboard?boardType=serve&amp;formerNo1=false&amp;surface=all&amp;timeFrame=2024&amp;versusRank=all">ATP
+    Tour serve leaderboard</a>, 2024 season, all surfaces.</figcaption>
+  </figure>
+
+  <p>According to the same <a href="https://www.atptour.com/en/stats/leaderboard?boardType=serve&amp;formerNo1=false&amp;surface=all&amp;timeFrame=2024&amp;versusRank=all">ATP
+  leaderboard</a>, Sinner won 91.4% of his service games in 2024, compared with
+  Zverev's 90.0% and Hurkacz's 88.7%. This suggests that landing a high
+  percentage of first serves is not the only factor behind successful serving
+  performances. Sinner's ability to win points behind both his first and second
+  serves helped him maintain an extremely high service-game winning percentage
+  despite landing fewer first serves than Zverev. For players competing at the
+  highest level, the difference between landing a serve and winning the point
+  behind it can be crucial.</p>
+
+  <!-- ============ SECTION 3 + VISUAL 2 ============ -->
+  <h2>Why First-Serve Points Won Matter</h2>
+
+  <p>Scientific research provides additional evidence that winning points behind
+  the first serve plays a critical role in professional tennis. A
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10538650/">2023 study
+  published in PLOS ONE</a> examined 4,669 points from the later rounds of three
+  Grand Slam tournaments during the 2021 season. They found that players won
+  approximately 75% of points behind their first serves on grass and hard courts
+  compared with 69% on clay courts.</p>
+
+  <figure>
+    <h3>The first serve is worth about 20 points in every hundred</h3>
+    <p class="subhead">Share of points won behind each serve, by surface</p>
+    <canvas id="chart2"></canvas>
+    <figcaption>Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10538650/">PLOS
+    ONE, 2023</a>. Based on 4,669 points from the quarter-finals onward at
+    Roland Garros, Wimbledon and the US Open, 2021 season.</figcaption>
+  </figure>
+
+  <p>In contrast, players won approximately 55% of points behind their second
+  serves across all three surfaces. This difference shows the advantage of
+  having a successful first serve. When players are restricted to rely on their
+  second serve, their chances of winning the point usually go down. The same
+  study found that approximately 80% of points including a first serve and a
+  short rally were won by the player that was serving.</p>
+
+  <p>To put this in a different perspective, the first serve can create an
+  advantage before the rally has even developed. Another study, published in
+  <a href="https://tss.awf.poznan.pl/pdf-131280-110411?filename=Match-statistics-signific.pdf">Trends
+  in Sport Sciences in 2020</a> examined men's singles matches at the Australian
+  Open. Researchers found that first-serve points won was among the statistics
+  that distinguished winners from losers in both early and later tournament
+  rounds. The findings support the theory that winning points behind the first
+  serve is closely connected to successful match performances.</p>
+
+  <p>However, neither study establishes a universal percentage chance of winning
+  an entire match based on first-serve statistics by itself. They illustrate the
+  significance of first-serve effectiveness without proving that any single
+  serving statistic guarantees victory.</p>
+
+  <!-- ============ SECTION 4 + VISUAL 3 ============ -->
+  <h2>Technology Is Changing How Tennis Is Analyzed</h2>
+
+  <p>Professional tennis has become increasingly dependent on technology to
+  measure player performance. The ATP uses statistical tracking systems and
+  analytical tools to examine serving accuracy, point outcomes, rally patterns,
+  and other aspects of the game. These measurements allow coaches and players to
+  identify strengths and weaknesses that might not be obvious simply by watching
+  a match.</p>
+
+  <p>In an <a href="https://www.atptour.com/en/news/zverev-infosys-atp-beyond-the-numbers-august-2024">August
+  2024 ATP analysis</a>, tennis analyst Craig O'Shannessy examined a measurement
+  that combines first-serve percentage with first-serve points won. Craig is a
+  tennis expert that I've actually received a clinic from when I was in high
+  school and it is safe to say he was very knowledgeable about the numbers. The
+  calculation multiplies the percentage of first serves landed by the percentage
+  of those points won. For example, a player landing 70% of first serves and
+  winning 75% of those points would produce a combined first-serve rating of
+  52.5. This means the player wins 52.5% of all service points specifically
+  through successful first serves, with the remaining points involving second
+  serves.</p>
+
+  <figure>
+    <h3>Zverev's first serve does the most work &mdash; but Sinner still wins more games</h3>
+    <p class="subhead">Share of all service points won specifically through the first serve</p>
+    <canvas id="chart3"></canvas>
+    <figcaption><a href="https://www.atptour.com/en/stats/leaderboard?boardType=serve&amp;formerNo1=false&amp;surface=all&amp;timeFrame=2024&amp;versusRank=all">ATP
+    2024 serve data</a> using the method described by Craig O'Shannessy in
+    <a href="https://www.atptour.com/en/news/zverev-infosys-atp-beyond-the-numbers-august-2024">ATP
+    Beyond The Numbers</a>: first-serve percentage multiplied by first-serve
+    points won.</figcaption>
+  </figure>
+
+  <p>The measurement helps explain why focusing on only one serving statistic
+  can be misleading. A player who consistently lands first serves but struggles
+  to win points may not be as effective as someone who lands slightly fewer
+  first serves but wins a much greater percentage of those points. By combining
+  the two statistics, analysts can better evaluate how frequently a player's
+  first serve produces a successful outcome.</p>
+
+  <!-- ============ SECTION 5 ============ -->
+  <h2>The First Serve Doesn't Tell the Whole Story</h2>
+
+  <p>Although serving statistics provide valuable information, tennis matches
+  involve much more than the serve. Returning ability, second-serve performance,
+  court surface, physical endurance, and performance during important points all
+  influence the final result. For example, a player might win a high percentage
+  of first-serve points but struggle to break the opponent's serve. Another
+  player might have less impressive serving statistics but compensate with
+  stronger returning and baseline play.</p>
+
+  <p>The importance of the second serve also cannot be ignored. In a separate
+  <a href="https://www.atptour.com/en/news/alcaraz-sinner-infosys-atp-beyond-the-numbers-july-2024">ATP
+  analysis of Jannik Sinner and Carlos Alcaraz</a>, the tour reported that
+  players won an average of approximately 51% of points behind their second
+  serves. Even a small improvement in that percentage can become meaningful over
+  the course of a long match. This is why first-serve statistics are better
+  understood as indicators of performance rather than exact predictions of match
+  outcomes.</p>
+
+  <p>A player's first-serve percentage might increase during a match without
+  necessarily improving their chances of winning if the opponent continues to
+  return those serves effectively. Similarly, a player with a lower first-serve
+  percentage might still win comfortably by dominating return games or
+  performing better during break points. The relationship between serving
+  statistics and match victories is therefore more complicated than a single
+  percentage.</p>
+
+  <!-- ============ CONCLUSION ============ -->
+  <h2>What Really Matters in Winning Matches</h2>
+
+  <p>The available evidence points toward an important conclusion: getting the
+  first serve in matters, but winning the points behind that serve is essential
+  to turning it into a competitive advantage. ATP statistics show that successful
+  players can have very different first-serve percentages while maintaining
+  similarly strong serving performances. Research also demonstrates that points
+  played behind first serves are won substantially more frequently than points
+  played behind second serves.</p>
+
+  <p>Still, the published statistics examined here do not establish that a player
+  with a particular first-serve percentage has a specific probability of winning
+  the match. Answering that question would require analyzing individual match
+  results alongside each player's serving statistics. What the evidence does show
+  is that the first serve creates opportunities, but its effectiveness depends on
+  what happens next.</p>
+
+  <p>For professional tennis players, simply landing the ball
+  inside the service box is not enough. The real advantage comes from turning
+  that first serve into a point won.</p>
+
+  <p>And in a sport where a handful of points can decide an entire match, that
+  difference can be everything.</p>
+
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+  // shared colours and animation for all three charts
+  const navy   = "#14507D";
+  const sky    = "#5B9BD5";
+  const lime   = "#A3B818";
+  const animation = { duration: 1200, easing: "easeOutQuart" };
+
+  // ----- chart 1: three players, three serving stats -----
+  new Chart(document.getElementById("chart1"), {
+    type: "bar",
+    data: {
+      labels: ["Zverev", "Sinner", "Hurkacz"],
+      datasets: [
+        { label: "First serves in",        data: [71.3, 61.4, 63.2], backgroundColor: navy },
+        { label: "First-serve points won", data: [76.7, 79.4, 77.7], backgroundColor: sky  },
+        { label: "Service games won",      data: [90.0, 91.4, 88.7], backgroundColor: lime }
+      ]
+    },
+    options: {
+      responsive: true,
+      animation: animation,
+      plugins: { legend: { position: "bottom" } },
+      scales: {
+        y: { beginAtZero: true, max: 100,
+             title: { display: true, text: "Percentage (%)" } }
+      }
+    }
+  });
+
+  // ----- chart 2: first vs second serve, by surface -----
+  new Chart(document.getElementById("chart2"), {
+    type: "bar",
+    data: {
+      labels: ["Clay", "Grass", "Hard court"],
+      datasets: [
+        { label: "Points won on first serve",  data: [69, 75, 75], backgroundColor: navy },
+        { label: "Points won on second serve", data: [55, 54, 57], backgroundColor: sky  }
+      ]
+    },
+    options: {
+      responsive: true,
+      animation: animation,
+      plugins: { legend: { position: "bottom" } },
+      scales: {
+        y: { beginAtZero: true, max: 100,
+             title: { display: true, text: "Points won (%)" } }
+      }
+    }
+  });
+
+  // ----- chart 3: combined first-serve rating -----
+  // first-serve percentage x first-serve points won
+  new Chart(document.getElementById("chart3"), {
+    type: "bar",
+    data: {
+      labels: ["Zverev", "Hurkacz", "Sinner"],
+      datasets: [{
+        label: "Combined first-serve rating",
+        data: [54.7, 49.1, 48.8],
+        backgroundColor: navy
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: animation,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true,
+             title: { display: true, text: "Service points won via first serve (%)" } }
+      }
+    }
+  });
+</script>
+</body>
+</html>
